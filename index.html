@@ -302,87 +302,256 @@
   .daftar-gaya{min-width:230px}
   .daftar-gaya li span:nth-child(2){flex:1}
 
+
+  /* ================= Layar awal: identitas & ketentuan ================= */
+  :root{
+    --aw-biru:#0d47a1; --aw-biru-2:#1565c0; --aw-langit:#e8f1fd; --aw-garis:#d6e0ee;
+    --aw-amber:#ffb703; --aw-amber-tua:#e09b00; --aw-teks:#1f2933; --aw-redup:#52606d;
+    --aw-merah:#c62828; --aw-merah-muda:#fdecec; --aw-hijau:#2e7d32; --aw-hijau-muda:#e8f5e9;
+  }
+  .aw-latar{position:relative;overflow:hidden;background:#f3f7fc radial-gradient(#cfdcef 1px,transparent 1px) 0 0/22px 22px}
+  .aw-latar::before,.aw-latar::after{content:"";position:absolute;border-radius:50%;pointer-events:none;z-index:0}
+  .aw-latar::before{width:520px;height:520px;top:-220px;left:-180px;background:rgba(21,101,192,.10)}
+  .aw-latar::after{width:420px;height:420px;bottom:-200px;right:-140px;background:rgba(255,183,3,.20)}
+  .aw-latar > *{position:relative;z-index:1}
+  .aw-latar svg{width:20px;height:20px;fill:currentColor;flex:0 0 auto}
+
+  .aw-pusat{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .aw-jendela{width:min(440px,100%);background:#fff;border:1px solid var(--aw-garis);border-radius:16px;box-shadow:0 16px 40px rgba(13,71,161,.14);padding:28px 28px 24px;overflow:hidden;position:relative;animation:aw-muncul .28s ease-out}
+  .aw-pita{position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,var(--aw-biru) 0 70%,var(--aw-amber) 70% 100%)}
+  .aw-kepala{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+  .aw-logo{width:48px;height:48px;border-radius:12px;background:var(--aw-biru);color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 48px}
+  .aw-logo svg{width:28px;height:28px}
+  .aw-alis{margin:0;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--aw-biru-2)}
+  .aw-judul{margin:2px 0 0;font-size:22px;line-height:1.2;letter-spacing:.01em;color:var(--aw-teks)}
+  .aw-semangat{display:flex;align-items:center;gap:8px;margin:0 0 16px;padding:10px 12px;border-radius:10px;background:#fff6dc;color:#6b4e00;font-weight:600;font-size:14px}
+  .aw-semangat svg{color:var(--aw-amber-tua)}
+  .aw-langkah{list-style:none;display:flex;gap:8px;padding:0;margin:0 0 18px;font-size:13px;color:var(--aw-redup)}
+  .aw-langkah li{flex:1;display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:#f1f4f8}
+  .aw-langkah li span{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#cfd8dc;color:#fff;font-weight:700;font-size:12px}
+  .aw-langkah li.aktif{background:var(--aw-langit);color:var(--aw-biru);font-weight:700}
+  .aw-langkah li.aktif span{background:var(--aw-biru)}
+  .aw-medan{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+  .aw-medan label{font-size:14px;font-weight:700;color:var(--aw-teks)}
+  .aw-medan input,.aw-medan select{height:46px;font-size:16px;border:1.5px solid #b8c5d6;border-radius:10px;padding:0 14px;background:#fff;color:var(--aw-teks)}
+  .aw-medan select{appearance:none;-webkit-appearance:none;cursor:pointer;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2352606d' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 10px center/22px}
+  .aw-medan input:focus,.aw-medan select:focus{outline:none;border-color:var(--aw-biru-2);box-shadow:0 0 0 3px rgba(21,101,192,.18)}
+  .aw-medan input[aria-invalid="true"],.aw-medan select[aria-invalid="true"]{border-color:var(--aw-merah)}
+  .aw-medan small{font-size:12px;color:var(--aw-redup)}
+  .aw-galat{min-height:20px;margin:0 0 8px;font-size:14px;color:var(--aw-merah);font-weight:600}
+  .aw-tombol{width:100%;height:50px;border:none;border-radius:12px;font:inherit;font-size:16px;font-weight:800;letter-spacing:.02em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:transform .12s ease,background-color .12s ease,box-shadow .12s ease}
+  .aw-tombol:focus-visible{outline:3px solid #90caf9;outline-offset:3px}
+  .aw-tombol:active{transform:translateY(1px)}
+  .aw-biru{background:var(--aw-biru-2);color:#fff}
+  .aw-biru:hover{background:var(--aw-biru)}
+  .aw-amber{background:var(--aw-amber);color:#2b1d00;box-shadow:0 4px 0 var(--aw-amber-tua)}
+  .aw-amber:hover{background:#ffc634}
+  .aw-amber:active{box-shadow:0 2px 0 var(--aw-amber-tua);transform:translateY(2px)}
+  .aw-tautan{background:none;border:none;font:inherit;font-size:13px;font-weight:700;color:var(--aw-biru-2);cursor:pointer;padding:6px 4px;text-decoration:underline;text-underline-offset:3px}
+  #panelLanjut .aw-tautan{display:block;margin:10px auto 0}
+  .aw-peringatan{display:flex;align-items:center;gap:8px;margin:0 0 14px;padding:10px 12px;border-radius:10px;background:var(--aw-merah-muda);color:var(--aw-merah);font-weight:700;font-size:14px}
+  .aw-ringkas{list-style:none;margin:0 0 12px;padding:0;border:1px solid var(--aw-garis);border-radius:10px}
+  .aw-ringkas li{display:flex;justify-content:space-between;gap:12px;padding:9px 12px;font-size:14px}
+  .aw-ringkas li + li{border-top:1px solid var(--aw-garis)}
+  .aw-ringkas span{color:var(--aw-redup)}
+  .aw-catatan{font-size:13px;color:var(--aw-redup);line-height:1.5;margin:0 0 14px}
+
+  /* Ketentuan */
+  .aw-ket{max-width:1180px;min-height:100vh;margin:0 auto;padding:16px 28px;display:flex;flex-direction:column;gap:12px;animation:aw-muncul .28s ease-out}
+  .aw-ket-kepala{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .aw-ket-judul{margin:2px 0 0;font-size:24px;line-height:1.2;color:var(--aw-teks)}
+  .aw-identitas{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--aw-garis);border-radius:12px;padding:8px 10px 8px 12px}
+  .aw-identitas > svg{color:var(--aw-biru-2)}
+  .aw-identitas > span{display:flex;flex-direction:column;line-height:1.25;font-size:14px}
+  .aw-identitas small{color:var(--aw-redup);font-size:12px}
+  .aw-fakta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0}
+  .aw-fakta li{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--aw-garis);border-radius:999px;padding:6px 14px 6px 10px;font-size:14px;font-weight:700;color:var(--aw-teks)}
+  .aw-fakta svg{color:var(--aw-biru-2);width:18px;height:18px}
+  .aw-kolom{display:grid;grid-template-columns:1fr 1fr;gap:16px;flex:1}
+  .aw-kartu{background:#fff;border:1px solid var(--aw-garis);border-radius:14px;padding:16px 20px;font-size:14px;line-height:1.45;color:var(--aw-teks)}
+  .aw-kartu h2{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-size:18px}
+  .aw-kartu h3{display:flex;align-items:center;gap:8px;margin:12px 0 6px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--aw-redup)}
+  .aw-ikon{width:34px;height:34px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center}
+  .aw-ikon.kecil{width:24px;height:24px;border-radius:7px}
+  .aw-ikon.kecil svg{width:15px;height:15px}
+  .aw-ikon.biru{background:var(--aw-langit);color:var(--aw-biru-2)}
+  .aw-ikon.merah{background:var(--aw-merah-muda);color:var(--aw-merah)}
+  .aw-ikon.hijau{background:var(--aw-hijau-muda);color:var(--aw-hijau)}
+  .aw-bentuk{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .aw-bentuk li{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:8px 12px;border-radius:10px;background:#f6f8fb}
+  .aw-bentuk li > b{grid-column:1}
+  .aw-bentuk li > span{grid-column:1;color:var(--aw-redup);font-size:13px}
+  .aw-bentuk em{grid-column:2;grid-row:1 / span 2;align-self:center;font-style:normal;font-size:12px;font-weight:700;color:var(--aw-biru);background:var(--aw-langit);border-radius:999px;padding:4px 10px;white-space:nowrap}
+  .aw-poin{margin:0;padding-left:18px}
+  .aw-poin li{margin:3px 0}
+  .aw-poin ul{margin:3px 0;padding-left:18px}
+  .aw-warna{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px}
+  .aw-warna li{display:flex;align-items:center;gap:8px}
+  .aw-larangan{border-left:4px solid var(--aw-merah);background:var(--aw-merah-muda);border-radius:0 10px 10px 0;padding:10px 14px}
+  .aw-larangan p{margin:0 0 4px}
+  .aw-larangan ul{margin:0;padding-left:18px}
+  kbd{font:700 12px/1 Arial,sans-serif;border:1px solid #b8c5d6;border-bottom-width:2px;border-radius:4px;padding:2px 6px;background:#fff}
+  .aw-ket-kaki{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#fff;border:1px solid var(--aw-garis);border-radius:14px;padding:12px 14px 12px 20px}
+  .aw-ket-kaki p{margin:0;font-size:14px;color:var(--aw-redup)}
+  .aw-ket-kaki .aw-tombol{width:auto;min-width:280px;height:54px;font-size:18px;letter-spacing:.06em;padding:0 28px}
+
+  @keyframes aw-muncul{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.aw-jendela,.aw-ket{animation:none}.aw-tombol{transition:none}}
+  @media (max-width:860px){
+    .aw-kolom{grid-template-columns:1fr}
+    .aw-ket{padding:16px}
+    .aw-ket-kaki .aw-tombol{width:100%;min-width:0}
+  }
 </style>
 </head>
 <body>
 
-<!-- ===================== LAYAR MULAI ===================== -->
-<section id="layarMulai" class="layar aktif">
-  <div class="kartu">
-    <h1>SUMATIF AKHIR SEMESTER</h1>
-    <p class="sub">Mata Pelajaran: Informatika</p>
+<!-- ===================== IKON (dipakai ulang) ===================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tugas" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></symbol>
+  <symbol id="i-jam" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></symbol>
+  <symbol id="i-daftar" viewBox="0 0 24 24"><path d="M2 17h2v.5H3v1h1v.5H2v1h3v-4H2v1zm1-9h1V4H2v1h1v3zm-1 3h1.8L2 13.1v.9h3v-1H3.2L5 10.9V10H2v1zm5-6v2h14V5H7zm0 14h14v-2H7v2zm0-6h14v-2H7v2z"/></symbol>
+  <symbol id="i-sentuh" viewBox="0 0 24 24"><path d="M9 11.24V7.5C9 6.12 10.12 5 11.5 5S14 6.12 14 7.5v3.74c1.21-.81 2-2.18 2-3.74C16 5.01 13.99 3 11.5 3S7 5.01 7 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.91-1.38z"/></symbol>
+  <symbol id="i-awas" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></symbol>
+  <symbol id="i-kirim" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></symbol>
+  <symbol id="i-kotak" viewBox="0 0 24 24"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></symbol>
+  <symbol id="i-orang" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></symbol>
+  <symbol id="i-panah" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></symbol>
+  <symbol id="i-kilat" viewBox="0 0 24 24"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/></symbol>
+</svg>
 
-    <div id="panelBaru">
-      <ul class="info">
-        <li>Jumlah soal: 15 butir</li>
-        <li>Waktu: 45 menit</li>
-      </ul>
+<!-- ===================== LANGKAH 1: IDENTITAS (jendela mengambang) ===================== -->
+<section id="layarMulai" class="layar aktif aw-latar">
+  <div class="aw-pusat">
+    <div class="aw-jendela" role="dialog" aria-labelledby="awJudul">
+      <div class="aw-pita" aria-hidden="true"></div>
 
-      <h2>Petunjuk mengerjakan soal</h2>
-      <ol class="petunjuk">
-        <li>Isi nama lengkap dan pilih kelas, lalu tekan <b>Mulai Ujian</b>. Ujian berjalan dalam <b>layar penuh</b>.</li>
-        <li>Urutan soal dan urutan pilihan jawaban setiap murid berbeda.</li>
-        <li>Bentuk soal dan cara penilaiannya:
-          <ul>
-            <li><b>Pilihan ganda:</b> pilih satu jawaban. Jawaban benar bernilai 1 poin.</li>
-            <li><b>Pilihan ganda majemuk:</b> pilih semua jawaban yang benar. Setiap jawaban benar yang dipilih bernilai 1 poin. Jika semua jawaban benar sudah dipilih tetapi ada pilihan salah yang ikut dipilih, setiap pilihan salah mengurangi 1 poin.</li>
-            <li><b>Pilihan ganda kategori:</b> tentukan kategori untuk setiap pernyataan. Setiap pernyataan yang tepat bernilai 1 poin.</li>
-          </ul>
-        </li>
-        <li>Jawab dengan <b>mengklik</b> pilihan atau <b>menyeret</b> pilihan ke kotak jawaban.</li>
-        <li><b>Jangan</b> pindah tab, membuka jendela atau aplikasi lain, atau menekan tombol Esc. Jika itu terjadi:
+      <div class="aw-kepala">
+        <span class="aw-logo" aria-hidden="true"><svg><use href="#i-tugas"/></svg></span>
+        <div>
+          <p class="aw-alis">Mata Pelajaran Informatika</p>
+          <h1 id="awJudul" class="aw-judul">SUMATIF AKHIR SEMESTER</h1>
+        </div>
+      </div>
+
+      <div id="panelBaru">
+        <p class="aw-semangat"><svg aria-hidden="true"><use href="#i-kilat"/></svg>Semangat! Tunjukkan kemampuan terbaikmu.</p>
+        <ol class="aw-langkah" aria-label="Tahapan">
+          <li class="aktif" aria-current="step"><span>1</span>Identitas</li>
+          <li><span>2</span>Ketentuan</li>
+        </ol>
+
+        <div class="aw-medan">
+          <label for="inNama">Nama lengkap</label>
+          <input id="inNama" type="text" autocomplete="off" maxlength="60" placeholder="Tulis nama lengkapmu" aria-describedby="bantuNama">
+          <small id="bantuNama">Huruf besar di awal setiap kata terisi otomatis.</small>
+        </div>
+        <div class="aw-medan">
+          <label for="inKelas">Kelas</label>
+          <select id="inKelas">
+            <option value="">— Pilih kelas —</option>
+            <option>10A</option><option>10B</option><option>11</option><option>12A</option><option>12B</option>
+          </select>
+        </div>
+        <p id="errMulai" class="aw-galat" role="alert"></p>
+        <button id="btnKeKetentuan" class="aw-tombol aw-biru" type="button">Lanjut ke Ketentuan <svg aria-hidden="true"><use href="#i-panah"/></svg></button>
+      </div>
+
+      <div id="panelLanjut" hidden>
+        <p class="aw-peringatan"><svg aria-hidden="true"><use href="#i-awas"/></svg>Ujian atas namamu masih berlangsung.</p>
+        <ul class="aw-ringkas">
+          <li><span>Nama</span><b id="lanjutNama"></b></li>
+          <li><span>Kelas</span><b id="lanjutKelas"></b></li>
+          <li><span>Sisa waktu</span><b id="lanjutSisa"></b></li>
+        </ul>
+        <p class="aw-catatan">Halaman ujian dimuat ulang atau dibuka ulang. Kejadian ini <b>dicatat sebagai upaya curang</b>, dan soal dimulai lagi dari nomor 1 dengan urutan baru.</p>
+        <button id="btnLanjut" class="aw-tombol aw-biru" type="button">Lanjutkan Ujian <svg aria-hidden="true"><use href="#i-panah"/></svg></button>
+        <button id="btnResetGuru" class="aw-tautan" type="button">Reset sesi (khusus guru)</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LANGKAH 2: KETENTUAN (satu layar, dua kolom) ===================== -->
+<section id="layarKetentuan" class="layar aw-latar">
+  <div class="aw-ket">
+    <header class="aw-ket-kepala">
+      <div>
+        <p class="aw-alis">Langkah 2 dari 2 · Ketentuan Menjawab</p>
+        <h1 class="aw-ket-judul">Baca sebentar, lalu kita mulai!</h1>
+      </div>
+      <div class="aw-identitas">
+        <svg aria-hidden="true"><use href="#i-orang"/></svg>
+        <span><b id="ketNama"></b><small>Kelas <span id="ketKelas"></span></small></span>
+        <button id="btnUbahData" class="aw-tautan" type="button">Ubah</button>
+      </div>
+    </header>
+
+    <ul class="aw-fakta" aria-label="Ringkasan ujian">
+      <li><svg aria-hidden="true"><use href="#i-daftar"/></svg>15 soal</li>
+      <li><svg aria-hidden="true"><use href="#i-jam"/></svg>45 menit</li>
+      <li><svg aria-hidden="true"><use href="#i-tugas"/></svg>3 bentuk soal</li>
+      <li><svg aria-hidden="true"><use href="#i-kotak"/></svg>Urutan soal setiap murid berbeda</li>
+    </ul>
+
+    <div class="aw-kolom">
+      <section class="aw-kartu" aria-labelledby="hCara">
+        <h2 id="hCara"><span class="aw-ikon biru"><svg aria-hidden="true"><use href="#i-sentuh"/></svg></span>Cara Menjawab</h2>
+
+        <h3>Bentuk soal dan poin</h3>
+        <ul class="aw-bentuk">
+          <li><b>Pilihan ganda</b><span>Pilih <b>satu</b> jawaban.</span><em>1 poin</em></li>
+          <li><b>Pilihan ganda majemuk</b><span>Pilih <b>semua</b> jawaban yang benar. Jika semua jawaban benar sudah dipilih, setiap pilihan salah yang ikut dipilih mengurangi 1 poin.</span><em>1 poin per jawaban benar</em></li>
+          <li><b>Pilihan ganda kategori</b><span>Tentukan kategori untuk <b>setiap</b> pernyataan.</span><em>1 poin per pernyataan</em></li>
+        </ul>
+
+        <h3>Cara memilih</h3>
+        <ul class="aw-poin">
+          <li><b>Klik</b> pilihan, atau <b>seret</b> pilihan ke kotak jawaban.</li>
+          <li>Tandai <b>Ragu-ragu</b> jika ingin memeriksa soal itu lagi nanti.</li>
+        </ul>
+
+        <h3>Arti warna nomor soal</h3>
+        <ul class="aw-warna">
+          <li><span class="kotak putih"></span>Belum dijawab</li>
+          <li><span class="kotak hijau"></span>Sudah dijawab</li>
+          <li><span class="kotak kuning"></span>Ragu-ragu</li>
+          <li><span class="kotak merah"></span>Dilewati</li>
+        </ul>
+      </section>
+
+      <section class="aw-kartu" aria-labelledby="hAturan">
+        <h2 id="hAturan"><span class="aw-ikon merah"><svg aria-hidden="true"><use href="#i-awas"/></svg></span>Aturan Ujian</h2>
+
+        <div class="aw-larangan">
+          <p><b>Jangan</b> pindah tab, membuka jendela atau aplikasi lain, atau menekan tombol <kbd>Esc</kbd>. Jika itu terjadi:</p>
           <ul>
             <li>semua jawabanmu dihapus;</li>
             <li>kamu mengulang dari soal nomor 1 dengan urutan soal yang baru;</li>
             <li>kejadian itu dicatat sebagai upaya curang;</li>
             <li>waktu tetap berjalan.</li>
           </ul>
-        </li>
-        <li>Arti warna nomor soal:
-          <ul class="legenda-mulai">
-            <li><span class="kotak putih"></span> Putih: belum dijawab</li>
-            <li><span class="kotak hijau"></span> Hijau: sudah dijawab</li>
-            <li><span class="kotak kuning"></span> Kuning: ragu-ragu</li>
-            <li><span class="kotak merah"></span> Merah: dilewati</li>
-          </ul>
-        </li>
-        <li>Tekan <b>Kirim Jawaban</b> jika sudah selesai. Jika waktu habis, jawaban terkirim otomatis.</li>
-        <li>Saat jawaban dikirim, data berikut langsung tercatat di Google Sheet guru:
-          <ul>
-            <li>jawabanmu;</li>
-            <li>skor dan nilai;</li>
-            <li>catatan upaya curang (jika ada).</li>
-          </ul>
-          Pastikan komputer terhubung ke internet.
-        </li>
-      </ol>
+        </div>
 
-      <div class="form-baris">
-        <label>Nama lengkap<input id="inNama" type="text" autocomplete="off" maxlength="60"></label>
-        <label>Kelas
-          <select id="inKelas">
-            <option value="">— Pilih kelas —</option>
-            <option>10A</option><option>10B</option><option>11</option><option>12A</option><option>12B</option>
-          </select>
-        </label>
-      </div>
-      <div id="errMulai" class="pesan-error" role="alert"></div>
-      <button id="btnMulai" class="btn btn-utama" type="button">Mulai Ujian (Layar Penuh)</button>
+        <h3><span class="aw-ikon hijau kecil"><svg aria-hidden="true"><use href="#i-kirim"/></svg></span>Selesai dan pengiriman</h3>
+        <ul class="aw-poin">
+          <li>Tekan <b>Kirim Jawaban</b> jika sudah selesai. Jika waktu habis, jawaban terkirim otomatis.</li>
+          <li>Saat dikirim, data berikut langsung tercatat di Google Sheet guru:
+            <ul>
+              <li>jawabanmu;</li>
+              <li>skor dan nilai;</li>
+              <li>catatan upaya curang (jika ada).</li>
+            </ul>
+          </li>
+          <li>Pastikan komputer terhubung ke internet.</li>
+        </ul>
+      </section>
     </div>
 
-    <div id="panelLanjut" hidden>
-      <h2>Ujian masih berlangsung</h2>
-      <ul class="info">
-        <li>Nama: <b id="lanjutNama"></b></li>
-        <li>Kelas: <b id="lanjutKelas"></b></li>
-        <li>Sisa waktu: <b id="lanjutSisa"></b></li>
-      </ul>
-      <p>Halaman ujian ini dimuat ulang atau dibuka ulang. Kejadian ini <b>dicatat sebagai upaya curang</b>, dan soal dimulai lagi dari nomor 1 dengan urutan baru.</p>
-      <div class="baris-aksi">
-        <button id="btnLanjut" class="btn btn-utama" type="button">Lanjutkan Ujian (Layar Penuh)</button>
-        <button id="btnResetGuru" class="btn btn-garis btn-kecil" type="button">Reset sesi (khusus guru)</button>
-      </div>
-    </div>
+    <footer class="aw-ket-kaki">
+      <p>Saat tombol ditekan, layar penuh aktif dan waktu <b>45 menit</b> mulai berjalan.</p>
+      <button id="btnMulaiKerjakan" class="aw-tombol aw-amber" type="button">MULAI KERJAKAN <svg aria-hidden="true"><use href="#i-panah"/></svg></button>
+    </footer>
   </div>
 </section>
 
@@ -998,11 +1167,36 @@ function mulaiUjian(){
   pantau = true;
 }
 
-$('#btnMulai').addEventListener('click', () => {
-  const nama = kapital($('#inNama').value.trim().replace(/\s+/g, ' ')), kelas = $('#inKelas').value;
-  if (!nama || !kelas){ $('#errMulai').textContent = 'Isi nama lengkap dan pilih kelas terlebih dahulu.'; return; }
-  $('#inNama').value = nama;
-  st.nama = nama; st.kelas = kelas; st.mulai = Date.now(); st.log = [];
+function lanjutIdentitas(){
+  const elNama = $('#inNama'), elKelas = $('#inKelas');
+  const nama = kapital(elNama.value.trim().replace(/\s+/g, ' ')), kelas = elKelas.value;
+  elNama.setAttribute('aria-invalid', String(!nama));
+  elKelas.setAttribute('aria-invalid', String(!kelas));
+  if (!nama || !kelas){
+    $('#errMulai').textContent = (!nama && !kelas) ? 'Isi nama lengkap dan pilih kelas terlebih dahulu.' : (!nama ? 'Nama lengkap belum diisi.' : 'Kelas belum dipilih.');
+    (!nama ? elNama : elKelas).focus();
+    return;
+  }
+  $('#errMulai').textContent = '';
+  elNama.value = nama;
+  st.nama = nama; st.kelas = kelas;
+  $('#ketNama').textContent = nama;
+  $('#ketKelas').textContent = kelas;
+  tampilLayar('layarKetentuan');
+  window.scrollTo(0, 0);
+  $('#btnMulaiKerjakan').focus({preventScroll: true});
+}
+$('#btnKeKetentuan').addEventListener('click', lanjutIdentitas);
+$('#inNama').addEventListener('keydown', e => { if (e.key === 'Enter'){ e.preventDefault(); lanjutIdentitas(); } });
+['input', 'change'].forEach(ev => {
+  $('#inNama').addEventListener(ev, () => $('#inNama').removeAttribute('aria-invalid'));
+  $('#inKelas').addEventListener(ev, () => $('#inKelas').removeAttribute('aria-invalid'));
+});
+$('#btnUbahData').addEventListener('click', () => { tampilLayar('layarMulai'); $('#inNama').focus(); });
+
+$('#btnMulaiKerjakan').addEventListener('click', () => {
+  if (!st.nama || !st.kelas){ tampilLayar('layarMulai'); $('#inNama').focus(); return; }
+  st.mulai = Date.now(); st.log = [];
   kosongkan();
   simpanSesi();
   masukFs().then(mulaiUjian);
@@ -1144,6 +1338,9 @@ $('#btnKeluarFs').addEventListener('click', keluarFs);
   $('#panelBaru').hidden = true;
   $('#panelLanjut').hidden = false;
 })();
+
+// Fokus awal: kolom nama, atau tombol lanjut jika sesi masih berlangsung.
+setTimeout(() => { if ($('#layarMulai').classList.contains('aktif')) ($('#panelBaru').hidden ? $('#btnLanjut') : $('#inNama')).focus(); }, 0);
 
 })();
 </script>
